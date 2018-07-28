@@ -8,6 +8,7 @@ from django.http import HttpResponse
 from .models import Post, Category
 from comments.forms import CommentForm
 
+
 def index(request):
 #    return HttpResponse("欢迎访问jonathan博客首页！")
 #    return render(request, 'blog/index1.html', context={
@@ -19,6 +20,9 @@ def index(request):
 
 def detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
+
+    post.increase_views()
+
     post.body = markdown.markdown(post.body,
                                   extensions=[
                                      'markdown.extensions.extra',
