@@ -6,6 +6,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.six import python_2_unicode_compatible
+import markdown
+from django.utils.html import strip_tags
 
 
 class Category(models.Model):
