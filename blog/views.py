@@ -260,13 +260,13 @@ class PostDetailView(DetailView):
         return context
 
 def contact(request):
-    return render(request, 'blog/contact.html', context={'post_list': post_list})
+    return render(request, 'blog/contact.html')
 
 def about(request):
-    return render(request, reverse('blog/about.html'))
+    return render(request, 'blog/about.html')
 
 def full_width(request):
-    return render(request, reverse('blog/full_width.html'))
+    return render(request, 'blog/full_width.html')
 
 
 def search(request):
