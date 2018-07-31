@@ -12,6 +12,7 @@ from django.utils.text import slugify
 from markdown.extensions.toc import TocExtension
 
 from django.db.models import Q
+from django.core.urlresolvers import reverse
 
 def index(request):
 #    return HttpResponse("欢迎访问jonathan博客首页！")
@@ -262,10 +263,10 @@ def contact(request):
     return render(request, 'blog/contact.html', context={'post_list': post_list})
 
 def about(request):
-    return render(request, 'blog/about.html')
+    return render(request, reverse('blog/about.html'))
 
 def full_width(request):
-    return render(request, 'blog/full_width.html')
+    return render(request, reverse('blog/full_width.html'))
 
 
 def search(request):
