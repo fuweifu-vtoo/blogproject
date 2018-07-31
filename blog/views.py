@@ -257,6 +257,20 @@ class PostDetailView(DetailView):
             'comment_list': comment_list
         })
         return context
+
+def contact(request):
+    post_list = Post.objects.all().order_by('-created_time')
+    return render(request, 'blog/contact.html', context={'post_list': post_list})
+
+def about(request):
+    post_list = Post.objects.all().order_by('-created_time')
+    return render(request, 'blog/about.html', context={'post_list': post_list})
+
+def full_width(request):
+    post_list = Post.objects.all().order_by('-created_time')
+    return render(request, 'blog/full-width.html', context={'post_list': post_list})
+
+
 def search(request):
     q = request.GET.get('q')
     error_msg = ''
