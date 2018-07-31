@@ -268,7 +268,7 @@ def about(request):
 
 def full_width(request):
     post_list = Post.objects.all().order_by('-created_time')
-    return render(request, 'blog/full-width.html', context={'post_list': post_list})
+    return render(request, 'blog/full_width.html', context={'post_list': post_list})
 
 
 def search(request):

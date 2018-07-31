@@ -12,7 +12,7 @@ urlpatterns = [
     url(r'^category/(?P<pk>[0-9]+)/$', views.CategoryView.as_view(), name='category'),
     url(r'^tag/(?P<pk>[0-9]+)/$', views.TagView.as_view(), name='tag'),
     url(r'^contact/$', views.contact, name='contact'),
-    url(r'^full-width/$', views.full_width, name='full-width'),
+    url(r'^full_width/$', views.full_width, name='full_width'),
     url(r'^about/$', views.about, name='about'),
     #url(r'^search/$', views.search, name='search'),
 ]
