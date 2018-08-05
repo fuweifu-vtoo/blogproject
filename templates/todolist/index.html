@@ -1,14 +1,14 @@
 {% load staticfiles %}
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>TodoList</title>
   <link rel="stylesheet" href="{% static 'todolist/css/style.css' %}">
 </head>
-
 <body>
+
   <main class="todoList">
     <section class="header">
       <h1><span>Todo List</span></h1>
@@ -32,7 +32,7 @@
     </div>
     <div class="task">
       <div class="task-content"> <input type="checkbox" />
-        <p>刷分雅思</p>
+        <p>准备雅思</p>
       </div>
       <button class="btn icon-remove"><span>Delete</span></button>
     </div>
@@ -44,17 +44,13 @@
     </div>
     </section>
   </main>
-  <footer> by <a href="https://github.com/cheeseKun">cheesekun
+  <footer> by <a href="{% url 'hydrogen:hydrogen' %}">cheesekun
   <br>
-<img src="https://avatars2.githubusercontent.com/u/21058528?v=3&amp;s=460">
-  </a><br>
-  <br>
-  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <span id="busuanzi_container_site_pv">此页已被访问<span id="busuanzi_value_site_pv"></span>次</span>
-  </footer>
+<img src="{% static 'hydrogen/images/baiyuechu.jpeg' %}">
+  </a></footer>
   <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=aCbUPcKLLGVG5HQj2h2zDuh1t9BesGs8">
   </script>
   <script src="{% static 'todolist/js/js.js' %}"></script>
-</body>
 
+</body>
 </html>

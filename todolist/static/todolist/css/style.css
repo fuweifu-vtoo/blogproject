@@ -18,7 +18,7 @@
 }
 
 body {
-  background: #ffd073;
+  background: #ffb6c1;
   font-size: 100%;
 }
 
@@ -125,7 +125,7 @@ body {
   padding: 15px;
   transition: all 0.3s;
   background: #823aa0;
-  color: #fff;
+  color: #111;
   font: 500 16px/1 weiruanyahei;
   overflow: hidden;
 }
