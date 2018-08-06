@@ -123,8 +123,10 @@ for (var i = 0; i < colorP.length; i++) {
 /* 随机语句 */
 function randomSentence() {
   var random = ["今日份的任务，完成了吗?",
+  "今日份的任务，完成了吗?","今日份的任务，完成了吗?","今日份的任务，完成了吗?",
+  "今日份的任务，完成了吗?","今日份的任务，完成了吗?","今日份的任务，完成了吗?",
   ];
-  var i = Math.ceil(1 * Math.random());
+  var i = Math.ceil(6 * Math.random());
   $("sentence").innerHTML = random[i];
 }
 
