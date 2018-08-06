@@ -1,5 +1,7 @@
-{% extends 'base.html' %}
+{% extends 'base_without_aside.html' %}
     {% block main %}
+      <div class="content-body">
+        <div class="container">
                 <article class="post post-{{ post.pk }}">
                   <header class="entry-header">
                     <h1 class="entry-title">{{ post.title }}</h1>
@@ -62,6 +64,8 @@
                         </ul>
                     </div>
                 </section>
+        </div>
+      </div>
     {% endblock main %}
     {% block toc %}
       <div class="widget widget-content">

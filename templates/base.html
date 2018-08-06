@@ -10,12 +10,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Google Webfonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="{% static 'hydrogen/css/animate.css' %}">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="{% static 'hydrogen/css/icomoon.css' %}">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="{% static 'hydrogen/css/magnific-popup.css' %}">
+    <!-- Salvattore -->
+    <link rel="stylesheet" href="{% static 'hydrogen/css/salvattore.css' %}">
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static 'hydrogen/css/style.css' %}">
+    <!-- Modernizr JS -->
+    <script src="{% static 'hydrogen/js/modernizr-2.6.2.min.js' %}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
     <!-- css -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'blog/css/pace.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/custom.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/highlights/github.css' %}">
+
+
 
     <!-- js -->
     <script src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
@@ -29,6 +52,8 @@
             color: red;
         }
     </style>
+
+    
 
 </head>
 
@@ -72,6 +97,36 @@
             </div><!-- col-md-8 -->
         </div>
     </header>
+
+    <div id="fh5co-offcanvass">
+        <a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close">Menu <i class="icon-cross"></i> </a>
+        <h1 class="fh5co-logo"><a class="navbar-brand" href="{% url 'hydrogen:hydrogen' %}">IMPRESSION</a></h1>
+        <ul>
+            <li class="active"><a href="{% url 'hydrogen:hydrogen' %}">Home</a></li>
+            <li><a href="{% url 'blog:index' %}">Blog</a></li>
+            <li><a href="{% url 'todolist:todolist' %}">TodoList</a></li>
+            <li><a href="{% url 'hydrogen:about' %}">About</a></li>
+            <li><a href="{% url 'hydrogen:contact' %}">Contact</a></li>
+        </ul>
+        <h3 class="fh5co-lead">Connect with me</h3>
+        <p class="fh5co-social-icons">
+            <a href="https://github.com/fuweifu-vtoo" target="_blank" ><img src="{% static 'hydrogen/images/footer_ico-github.png' %}" widht="20px"  height="20px"></a>
+            <a href="https://www.zhihu.com/people/hao-ku-de-wo/activities" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-zhihu.png' %}" widht="20px"  height="20px"></a>
+            <a href="https://music.163.com/#/user/home?id=131743529" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-netease.png' %}" widht="20px"  height="20px"></a>
+            <a href="{% static 'hydrogen/images/my_wechat_QR_code.jpeg' %}" title=" < FWF19961004 > is my wechat ID " class="image-popup fh5co-board-img" ><img src="{% static 'hydrogen/images/footer_ico-wechat.jpeg' %}" widht="20px"  height="20px"></a>
+        </p>
+    </div>
+    <header id="fh5co-header" role="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="#" class="fh5co-menu-btn js-fh5co-menu-btn">Menu <i class="icon-menu"></i></a>
+                    <a class="navbar-brand" href="{% url 'hydrogen:hydrogen' %}">impression</a>     
+                </div>
+            </div>
+        </div>
+    </header>
+
 </div>
 <div class="copyrights">Collect from <a href="http://www.cssmoban.com/">网页模板</a></div>
 <div class="copyrights">Modified by <a href="http://zmrenwu.com/">追梦人物的博客</a></div>
@@ -172,7 +227,23 @@
     </nav>
 </div>
 
+<!-- jQuery -->
+    <script src="{% static 'hydrogen/js/jquery.min.js' %}"></script>
+    <!-- jQuery Easing -->
+    <script src="{% static 'hydrogen/js/jquery.easing.1.3.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'hydrogen/js/bootstrap.min.js' %}"></script>
+    <!-- Waypoints -->
+    <script src="{% static 'hydrogen/js/jquery.waypoints.min.js' %}"></script>
+    <!-- Magnific Popup -->
+    <script src="{% static 'hydrogen/js/jquery.magnific-popup.min.js' %}"></script>
+    <!-- Salvattore -->
+    <script src="{% static 'hydrogen/js/salvattore.min.js' %}"></script>
+    <!-- Main JS -->
+    <script src="{% static 'hydrogen/js/main.js' %}"></script>
+
 <script src="{% static 'blog/js/script.js' %}"></script>
+
 
 </body>
 </html>
