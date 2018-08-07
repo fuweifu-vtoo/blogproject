@@ -4,11 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Black &amp; White</title>
+    <title>fuweifu-vtoo|IMPRESSION</title>
 
     <!-- meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static 'hydrogen/css/style.css' %}">
 
     <!-- css -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -30,6 +33,25 @@
         }
     </style>
 
+  <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static 'hydrogen/css/style.css' %}">
+<!-- Google Webfonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="{% static 'hydrogen/css/animate.css' %}">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="{% static 'hydrogen/css/icomoon.css' %}">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="{% static 'hydrogen/css/magnific-popup.css' %}">
+    <!-- Salvattore -->
+    <link rel="stylesheet" href="{% static 'hydrogen/css/salvattore.css' %}">
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static 'hydrogen/css/style.css' %}">
+    <!-- Modernizr JS -->
+    <script src="{% static 'hydrogen/js/modernizr-2.6.2.min.js' %}"></script>
+
 </head>
 
 <body>
@@ -38,7 +60,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-5 col-xs-8">
                 <div class="logo">
-                    <h1><a href="{% url 'blog:index' %}"><b>Black</b> &amp; White</a></h1>
+                    <h1><a href="{% url 'blog:index' %}">Impression</a></h1>
                 </div>
             </div><!-- col-md-4 -->
             <div class="col-md-8 col-sm-7 col-xs-4">
@@ -51,10 +73,10 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="cl-effect-11"><a href="{% url 'hydrogen:hydrogen' %}" data-hover="首页">首页</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="博客">博客</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'hydrogen:about' %}" data-hover="关于">关于</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'hydrogen:contact' %}" data-hover="联系">联系</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'hydrogen:hydrogen' %}" data-hover="home">home</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="blog">blog</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'hydrogen:about' %}" data-hover="about">about</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'hydrogen:contact' %}" data-hover="contact">contact</a></li>
                             <li class="cl-effect-11"><a href="{% url 'todolist:todolist' %}" data-hover="TodoList">TodoList</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -72,30 +94,38 @@
         </div>
     </header>
 </div>
+
 <div class="copyrights">Collect from <a href="http://www.cssmoban.com/">网页模板</a></div>
 <div class="copyrights">Modified by <a href="http://zmrenwu.com/">追梦人物的博客</a></div>
+
 <div class="content-body">
     <div class="container">
         <div class="row">
-            <main class="col-md-8">
+            <main class="col-md-12">
                 {% block main %}
                 {% endblock main %}
             </main>
         </div>
     </div>
 </div>
-<footer id="site-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <p class="copyright">&copy 2017 - 采集自<a href="http://www.cssmoban.com/"
-                                                        target="_blank" title="模板之家">模板之家</a>
-                    - 由<a href="http://zmrenwu.com/" title="网页模板" target="_blank">追梦人物的博客</a>修改
-                </p>
+    <footer id="fh5co-footer">
+        
+        <div class="container">
+            <div class="row row-padded">
+                <div class="col-md-12 text-center">
+                    <p class="fh5co-social-icons">
+                        <a href="https://github.com/fuweifu-vtoo" target="_blank" ><img src="{% static 'hydrogen/images/footer_ico-github.png' %}" widht="20px"  height="20px"></a>
+                        <a href="https://www.zhihu.com/people/hao-ku-de-wo/activities" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-zhihu.png' %}" widht="20px"  height="20px"></a>
+                        <a href="https://music.163.com/#/user/home?id=131743529" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-netease.png' %}" widht="20px"  height="20px"></a>
+                        <a href="{% static 'hydrogen/images/my_wechat_QR_code.jpeg' %}" title=" < FWF19961004 > is my wechat ID " class="image-popup fh5co-board-img" ><img src="{% static 'hydrogen/images/footer_ico-wechat.jpeg' %}" widht="20px"  height="20px"></a>
+                    </p>
+                    <p><small>Copyright &copy; 2018 fuweifu-vtoo All Rights Reserved. <br>
+                        <a href="{% url 'hydrogen:hydrogen' %}">本站</a>作品版权为<a href="{% url 'hydrogen:about' %}">本人</a>所有，转载需取得<a href="{% url 'hydrogen:about' %}" target="_blank">本人</a>同意并在明显位置处注明出处
+                        </small></p>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 <!-- Mobile Menu -->
 <div class="overlay overlay-hugeinc">
@@ -111,7 +141,42 @@
     </nav>
 </div>
 
+<div class="overlay overlay-hugeinc">
+    <div id="fh5co-offcanvass">
+        <a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close">Menu <i class="icon-cross"></i> </a>
+        <h1 class="fh5co-logo"><a class="navbar-brand" href="{% url 'hydrogen:hydrogen' %}">IMPRESSION</a></h1>
+        <ul>
+            <li class="active"><a href="{% url 'hydrogen:hydrogen' %}">Home</a></li>
+            <li><a href="{% url 'blog:index' %}">Blog</a></li>
+            <li><a href="{% url 'todolist:todolist' %}">TodoList</a></li>
+            <li><a href="{% url 'hydrogen:about' %}">About</a></li>
+            <li><a href="{% url 'hydrogen:contact' %}">Contact</a></li>
+        </ul>
+        <h3 class="fh5co-lead">Connect with me</h3>
+        <p class="fh5co-social-icons">
+            <a href="https://github.com/fuweifu-vtoo" target="_blank" ><img src="{% static 'hydrogen/images/footer_ico-github.png' %}" widht="20px"  height="20px"></a>
+            <a href="https://www.zhihu.com/people/hao-ku-de-wo/activities" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-zhihu.png' %}" widht="20px"  height="20px"></a>
+            <a href="https://music.163.com/#/user/home?id=131743529" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-netease.png' %}" widht="20px"  height="20px"></a>
+            <a href="{% static 'hydrogen/images/my_wechat_QR_code.jpeg' %}" title=" < FWF19961004 > is my wechat ID " class="image-popup fh5co-board-img" ><img src="{% static 'hydrogen/images/footer_ico-wechat.jpeg' %}" widht="20px"  height="20px"></a>
+        </p>
+    </div>
+</div>
+
 <script src="{% static 'blog/js/script.js' %}"></script>
+<!-- jQuery -->
+    <script src="{% static 'hydrogen/js/jquery.min.js' %}"></script>
+    <!-- jQuery Easing -->
+    <script src="{% static 'hydrogen/js/jquery.easing.1.3.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'hydrogen/js/bootstrap.min.js' %}"></script>
+    <!-- Waypoints -->
+    <script src="{% static 'hydrogen/js/jquery.waypoints.min.js' %}"></script>
+    <!-- Magnific Popup -->
+    <script src="{% static 'hydrogen/js/jquery.magnific-popup.min.js' %}"></script>
+    <!-- Salvattore -->
+    <script src="{% static 'hydrogen/js/salvattore.min.js' %}"></script>
+    <!-- Main JS -->
+    <script src="{% static 'hydrogen/js/main.js' %}"></script>
 
 </body>
 </html>
