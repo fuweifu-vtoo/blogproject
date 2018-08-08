@@ -9,4 +9,4 @@ from .models import Image
 class ImageAdmin(admin.ModelAdmin):
     list_display = ['title', 'href','created_time', 'author']
 
-admin.site.register(Image)
+admin.site.register(Image,ImageAdmin)
