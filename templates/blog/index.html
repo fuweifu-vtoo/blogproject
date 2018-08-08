@@ -36,13 +36,13 @@
                 </div>
                 -->
                 {% if is_paginated %}
-                <div class="pagination">
+                <div class="digg">
                   {% if first %}
                     <a href="?page=1">1</a>
                   {% endif %}
                   {% if left %}
                     {% if left_has_more %}
-                        <span>...</span>
+                        <span class="disable">...</span>
                     {% endif %}
                     {% for i in left %}
                         <a href="?page={{ i }}">{{ i }}</a>
@@ -54,7 +54,7 @@
                         <a href="?page={{ i }}">{{ i }}</a>
                     {% endfor %}
                     {% if right_has_more %}
-                        <span>...</span>
+                        <span class="disable">...</span>
                     {% endif %}
                   {% endif %}
                   {% if last %}

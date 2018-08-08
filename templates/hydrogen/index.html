@@ -1,141 +1,61 @@
 {% extends 'base_hydrogen.html' %}
 {% load staticfiles %}
 	{% block main %}
+    {% if error_msg %}
+        <p>{{ error_msg }}</p>
+    {% endif %}
+
 	<div id="fh5co-main">
 		<div class="container">
-
 			<div class="row">
-
         <div id="fh5co-board" data-columns>
-
+            {% for image in image_list %}
             <div class="item">
                 <div class="animate-box">
-                    <a href="http://pd3aouuev.bkt.clouddn.com/WechatIMG21.jpeg" class="image-popup fh5co-board-img" title="Maxime qui eius quisquam quidem quos unde consectetur accusamus adipisci!"><img src="http://pd3aouuev.bkt.clouddn.com/WechatIMG21.jpeg" alt="Free HTML5 Bootstrap template"></a>
+                    <a href={{ image.href }} title={{ image.title }}><img src={{ image.href }} alt="Free HTML5 Bootstrap template"></a>
                 </div>
-                <div class="fh5co-desc">Delicious snack platter with iced lychee soda, showy meal!</div>
+                <div class="fh5co-desc">{{ image.title }}</div>
             </div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="http://pd3aouuev.bkt.clouddn.com/WechatIMG2.jpeg" class="image-popup fh5co-board-img" title="Maxime qui eius quisquam quidem quos unde consectetur accusamus adipisci!"><img src="http://pd3aouuev.bkt.clouddn.com/WechatIMG2.jpeg" alt="Free HTML5 Bootstrap template"></a>
-        		</div>
-        		<div class="fh5co-desc">Maxime qui eius quisquam quidem quos unde consectetur accusamus adipisci!</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="{% static 'hydrogen/images/WechatIMG4.jpeg' %}" class="image-popup fh5co-board-img"><img src="{% static 'hydrogen/images/WechatIMG4.jpeg' %}" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Veniam voluptatum voluptas tempora debitis harum totam vitae hic quos.</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="http://pd3aouuev.bkt.clouddn.com/WechatIMG3.jpeg" class="image-popup fh5co-board-img"><img src="http://pd3aouuev.bkt.clouddn.com/WechatIMG3.jpeg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Optio commodi quod vitae, vel, officiis similique quaerat odit dicta.</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="http://pd3aouuev.bkt.clouddn.com/WechatIMG5.jpeg" class="image-popup fh5co-board-img"><img src="http://pd3aouuev.bkt.clouddn.com/WechatIMG5.jpeg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Dolore itaque deserunt sit, at exercitationem delectus, consequuntur quaerat sapiente.</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="http://pd3aouuev.bkt.clouddn.com/WechatIMG6.jpeg" class="image-popup fh5co-board-img"><img src="http://pd3aouuev.bkt.clouddn.com/WechatIMG6.jpeg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Tempora distinctio inventore, nisi excepturi pariatur tempore sit quasi animi.</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="http://pd3aouuev.bkt.clouddn.com/WechatIMG7.jpeg" class="image-popup fh5co-board-img"><img src="http://pd3aouuev.bkt.clouddn.com/WechatIMG7.jpeg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Sequi, eaque suscipit accusamus. Necessitatibus libero, unde a nesciunt repellendus!</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="http://pd3aouuev.bkt.clouddn.com/WechatIMG8.jpeg" class="image-popup fh5co-board-img"><img src="http://pd3aouuev.bkt.clouddn.com/WechatIMG8.jpeg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Necessitatibus distinctio eos ipsam cum hic temporibus assumenda deleniti, soluta.</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="http://pd3aouuev.bkt.clouddn.com/WechatIMG9.jpeg" class="image-popup fh5co-board-img"><img src="http://pd3aouuev.bkt.clouddn.com/WechatIMG9.jpeg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Debitis voluptatum est error nulla voluptate eum maiores animi quasi?</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="http://pd3aouuev.bkt.clouddn.com/WechatIMG10.jpeg" class="image-popup fh5co-board-img"><img src="http://pd3aouuev.bkt.clouddn.com/WechatIMG10.jpeg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Maxime qui eius quisquam quidem quos unde consectetur accusamus adipisci!</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="http://pd3aouuev.bkt.clouddn.com/WechatIMG12.jpeg" class="image-popup fh5co-board-img"><img src="http://pd3aouuev.bkt.clouddn.com/WechatIMG12.jpeg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Deleniti aliquid, accusantium, consectetur harum eligendi vitae quaerat reiciendis sit?</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="{% static 'hydrogen/images/WechatIMG11.jpeg' %}" class="image-popup fh5co-board-img"><img src="{% static 'hydrogen/images/WechatIMG11.jpeg' %}" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Incidunt, eaque et. Et odio excepturi, eveniet facilis explicabo assumenda.</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="http://pd3aouuev.bkt.clouddn.com/WechatIMG13.jpeg" class="image-popup fh5co-board-img"><img src="http://pd3aouuev.bkt.clouddn.com/WechatIMG13.jpeg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Laborum dolores nihil voluptates quas alias distinctio fugiat tempora sit.</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="http://pd3aouuev.bkt.clouddn.com/WechatIMG14.jpeg" class="image-popup fh5co-board-img"><img src="http://pd3aouuev.bkt.clouddn.com/WechatIMG14.jpeg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Sit, quis nulla amet numquam fugit, in reiciendis laboriosam dolor.</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="http://pd3aouuev.bkt.clouddn.com/WechatIMG15.jpeg" class="image-popup fh5co-board-img"><img src="http://pd3aouuev.bkt.clouddn.com/WechatIMG15.jpeg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Possimus explicabo voluptatem natus nisi similique ipsa repudiandae? Quibusdam, fuga.</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="http://pd3aouuev.bkt.clouddn.com/WechatIMG17.jpeg" class="image-popup fh5co-board-img"><img src="http://pd3aouuev.bkt.clouddn.com/WechatIMG17.jpeg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Magni repellendus iusto mollitia, quibusdam facilis incidunt. Sunt, repellat, voluptatem.</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="{% static 'hydrogen/images/WechatIMG16.jpeg' %}" class="image-popup fh5co-board-img"><img src="{% static 'hydrogen/images/WechatIMG16.jpeg' %}" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Unde iure rerum cupiditate explicabo quam aut vel earum numquam.</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="http://pd3aouuev.bkt.clouddn.com/WechatIMG18.jpeg" class="image-popup fh5co-board-img"><img src="http://pd3aouuev.bkt.clouddn.com/WechatIMG18.jpeg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Qui nisi error dolorum dolor delectus, alias doloremque perspiciatis nemo.</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="{% static 'hydrogen/images/WechatIMG1.jpeg' %}" class="image-popup fh5co-board-img"><img src="{% static 'hydrogen/images/WechatIMG1.jpeg' %}" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Neque porro vero cumque natus nam voluptatibus, ratione, commodi labore.</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="http://pd3aouuev.bkt.clouddn.com/WechatIMG19.jpeg" class="image-popup fh5co-board-img"><img src="http://pd3aouuev.bkt.clouddn.com/WechatIMG19.jpeg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Quisquam quia totam, sit ea maxime sint sed excepturi quod.</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="{% static 'hydrogen/images/WechatIMG20.jpeg' %}" class="image-popup fh5co-board-img"><img src="{% static 'hydrogen/images/WechatIMG20.jpeg' %}" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Nesciunt non iste ex nemo sapiente eum, provident nam corporis.</div>
-        		</div>
-        	</div>
+            {% empty %}
+                <div class="no-image">暂时还没有发布的图像！</div>
+            {% endfor %}
         </div>
         </div>
        </div>
 	</div>
+    <!-- 简单分页效果
+    <div class="pagination-simple">
+        <a href="#">上一页</a>
+        <span class="current">第 6 页 / 共 11 页</span>
+        <a href="#">下一页</a>
+    </div>
+    -->
+    {% if is_paginated %}
+    <div class="digg">
+      {% if first %}
+        <a href="?page=1">1</a>
+      {% endif %}
+      {% if left %}
+        {% if left_has_more %}
+            <span class=disable >...</span>
+        {% endif %}
+        {% for i in left %}
+            <a href="?page={{ i }}">{{ i }}</a>
+        {% endfor %}
+      {% endif %}
+      <a href="?page={{ page_obj.number }}">{{ page_obj.number }}</a>
+      {% if right %}
+        {% for i in right %}
+            <a href="?page={{ i }}">{{ i }}</a>
+        {% endfor %}
+        {% if right_has_more %}
+            <span class=disable>...</span>
+        {% endif %}
+      {% endif %}
+      {% if last %}
+        <a href="?page={{ paginator.num_pages }}">{{ paginator.num_pages }}</a>
+      {% endif %}
+    </div>
+    {% endif %}
+
 	{% endblock main %}
