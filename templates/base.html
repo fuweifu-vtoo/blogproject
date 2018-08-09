@@ -60,8 +60,6 @@
     <link rel="stylesheet" href="{% static 'blog/css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/htmleaf-demo.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/pages.css' %}">
-
-    
     
     
 
@@ -107,9 +105,9 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="cl-effect-11"><a href="{% url 'hydrogen:hydrogen' %}" data-hover="home">home</a></li>
                             <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="blog">blog</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'todolist:todolist' %}" data-hover="TodoList">TodoList</a></li>
                             <li class="cl-effect-11"><a href="{% url 'hydrogen:about' %}" data-hover="about">about</a></li>
                             <li class="cl-effect-11"><a href="{% url 'hydrogen:contact' %}" data-hover="contact">contact</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'todolist:todolist' %}" data-hover="TodoList">TodoList</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -225,9 +223,10 @@
         <ul>
             <li><a href="{% url 'hydrogen:hydrogen' %}">home</a></li>
             <li><a href="{% url 'blog:index' %}">blog</a></li>
+            <li><a href="{% url 'todolist:todolist' %}">TodoList</a></li>
             <li><a href="{% url 'hydrogen:about' %}">about</a></li>
             <li><a href="{% url 'hydrogen:contact' %}">contact</a></li>
-            <li><a href="{% url 'todolist:todolist' %}">TodoList</a></li>
+            
         </ul>
 
     </nav>
