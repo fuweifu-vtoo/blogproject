@@ -12,7 +12,7 @@
             {% for image in image_list %}
             <div class="item">
                 <div class="animate-box">
-                    <a href={{ image.href }} title={{ image.title }}><img src={{ image.href }} alt="Free HTML5 Bootstrap template"></a>
+                    <a href={{ image.href }} title={{ image.title }} class="image-popup fh5co-board-img"><img src={{ image.href }} alt="Free HTML5 Bootstrap template"></a>
                 </div>
                 <div class="fh5co-desc">{{ image.title }}</div>
             </div>
@@ -43,7 +43,7 @@
             <a href="?page={{ i }}">{{ i }}</a>
         {% endfor %}
       {% endif %}
-      <a href="?page={{ page_obj.number }}">{{ page_obj.number }}</a>
+      <a href="?page={{ page_obj.number }}" style="color: red">{{ page_obj.number }}</a>
       {% if right %}
         {% for i in right %}
             <a href="?page={{ i }}">{{ i }}</a>

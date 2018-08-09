@@ -30,6 +30,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+
     
 
     <!-- css -->
@@ -58,6 +60,10 @@
     <link rel="stylesheet" href="{% static 'blog/css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/htmleaf-demo.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/pages.css' %}">
+
+    
+    
+    
 
 </head>
 
@@ -92,13 +98,11 @@
             </div><!-- col-md-4 -->
             <div class="col-md-8 col-sm-7 col-xs-4">
                 <nav class="main-nav" role="navigation">
-                    
                     <div class="navbar-header">
                         <button type="button" id="trigger-overlay" class="navbar-toggle">
                             <span class="ion-navicon"></span>
                         </button>
                     </div>
-
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="cl-effect-11"><a href="{% url 'hydrogen:hydrogen' %}" data-hover="home">home</a></li>
@@ -106,7 +110,6 @@
                             <li class="cl-effect-11"><a href="{% url 'hydrogen:about' %}" data-hover="about">about</a></li>
                             <li class="cl-effect-11"><a href="{% url 'hydrogen:contact' %}" data-hover="contact">contact</a></li>
                             <li class="cl-effect-11"><a href="{% url 'todolist:todolist' %}" data-hover="TodoList">TodoList</a></li>
-                            
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
