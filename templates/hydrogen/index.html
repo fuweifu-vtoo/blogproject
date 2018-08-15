@@ -1,10 +1,12 @@
 {% extends 'base_hydrogen.html' %}
 {% load staticfiles %}
+    {% block title %}
+    <title>fuweifu-vtoo | IMPRESSION</title>
+    {% endblock %}
 	{% block main %}
     {% if error_msg %}
         <p>{{ error_msg }}</p>
     {% endif %}
-
 	<div id="fh5co-main">
 		<div class="container">
 			<div class="row">

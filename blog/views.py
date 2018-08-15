@@ -14,6 +14,8 @@ from markdown.extensions.toc import TocExtension
 from django.db.models import Q
 from django.core.urlresolvers import reverse
 
+from hydrogen.visit_info import refresh_visitnumber,get_Userip
+
 def index(request):
 #    return HttpResponse("欢迎访问jonathan博客首页！")
 #    return render(request, 'blog/index1.html', context={
@@ -63,7 +65,6 @@ class IndexView(ListView):
     template_name = 'blog/index.html'
     context_object_name = 'post_list'
     paginate_by = 4
-
     def get_context_data(self, **kwargs):
         """
         在视图函数中将模板变量传递给模板是通过给 render 函数的 context 参数传递一个字典实现的，
@@ -72,8 +73,10 @@ class IndexView(ListView):
         在类视图中，这个需要传递的模板变量字典是通过 get_context_data 获得的，
         所以我们复写该方法，以便我们能够自己再插入一些我们自定义的模板变量进去。
         """
-
-        # 首先获得父类生成的传递给模板的字典。
+        # 首先记录用户ip和home页面的访问次数
+        refresh_visitnumber(self.request,'blog')       #类视图函数中没有request参数，其实是在self中，用self.request
+        get_Userip(self.request)
+        # 获得父类生成的传递给模板的字典。
         context = super().get_context_data(**kwargs)
 
         # 父类生成的字典中已有 paginator、page_obj、is_paginated 这三个模板变量，
@@ -194,6 +197,8 @@ class IndexView(ListView):
         }
 
         return data
+    def get_queryset(self):
+        return super(IndexView, self).get_queryset().order_by('-created_time')
 
 class CategoryView(IndexView):
     def get_queryset(self):

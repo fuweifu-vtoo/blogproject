@@ -1,6 +1,14 @@
 {% extends 'base_hydrogen.html' %}
 
-	
+	{% block title %}
+    <title>Contact Me via Vtoo.pro</title>
+    <script type="text/javascript">
+	function display_alert()
+	  {
+	  alert("～尝试发送邮件中｡◕‿◕｡！")
+	  }
+	</script>
+    {% endblock %}
 	{% block main %}
 	<div id="fh5co-main">
 		<div class="container">
@@ -8,30 +16,35 @@
 				<div class="col-md-8 col-md-offset-2">
 					<h2>Contact</h2>
 					<div class="fh5co-spacer fh5co-spacer-sm"></div>
-					<form action="{% url 'hydrogen:contact' %}" method="post" class="comment-form" >
+					<form action="{% url 'contact:contact' %}" method="post" class="contact-form" >
 						{% csrf_token %}
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<input type="text" class="form-control" placeholder="First Name" id="{{ form.name.id_for_label }}">	
+									<input id="{{form.first_name.id_for_input}}" type="text" class="form-control" placeholder="First Name" name="first_name">
+									{{ form.first_name.errors }}
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Last Name" id="{{ form.url.id_for_label }}">
+									<input id="{{form.last_name.id_for_input}}" type="text" class="form-control" placeholder="Last Name" name="last_name">
+									{{ form.last_name.errors }}
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<input type="email" class="form-control" placeholder="Email Address" id="{{ form.email.id_for_label }}">
+									<input id="{{form.email.id_for_input}}" type="text" class="form-control" placeholder="Email Address" name="email">
+									{{ form.email.errors }}
 								</div>
 								<div class="form-group">
-									<textarea name="message" id="{{ form.text.id_for_label }}" cols="30" class="form-control" rows="10"></textarea>
+									<textarea name="text" id="{{ form.text.id_for_label }}" cols="30" class="form-control" rows="10"></textarea>
+									{{ form.text.errors }}
 								</div>
 								<div class="form-group">
-									<input type="submit" class="btn btn-primary" value="Send Message">
+									<input type="submit" class="btn btn-primary" value="Send Message" onclick="display_alert()">
 								</div>
 							</div>
+
 						</div>
 					</form>
 					

@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^search/',include('haystack.urls')),
     url(r'',include('todolist.urls')),
     url(r'',include('hydrogen.urls')),
+    url(r'', include('contact.urls')),
 ]

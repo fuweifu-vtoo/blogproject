@@ -6,12 +6,21 @@ from django.views.generic import ListView
 from django.utils.text import slugify
 from django.db.models import Q
 
+from contact.forms import ContactForm
+
+from .visit_info import refresh_visitnumber,get_Userip
+
 # Create your views here.
 
 def contact(request):
-    return render(request, 'hydrogen/contact.html')
+    form = ContactForm()   #这里不用写成 form = ContactForm(request.POST)，因为我只要一个结构。
+    context = {'form': form,
+               }
+    refresh_visitnumber(request,'contact')
+    return render(request, 'hydrogen/contact.html',context=context)
 
 def about(request):
+    refresh_visitnumber(request,'about')
     return render(request, 'hydrogen/about.html')
 
 def hydrogen(request):
@@ -33,7 +42,10 @@ class IndexView(ListView):
         所以我们复写该方法，以便我们能够自己再插入一些我们自定义的模板变量进去。
         """
 
-        # 首先获得父类生成的传递给模板的字典。
+        # 首先记录用户ip和home页面的访问次数
+        refresh_visitnumber(self.request,'home')       #类视图函数中没有request参数，其实是在self中，用self.request
+        get_Userip(self.request)
+        # 父类生成的传递给模板的字典。
         context = super().get_context_data(**kwargs)
 
         # 父类生成的字典中已有 paginator、page_obj、is_paginated 这三个模板变量，
