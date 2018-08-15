@@ -1,0 +1,7 @@
+*.pyc
+.DS_Store
+fabfile.py
+db.sqlite3
+whoosh_index/
+blog/.DS_Store
+migrations
