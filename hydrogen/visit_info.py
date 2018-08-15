@@ -2,7 +2,7 @@
 # @Author: Jonathan fu
 # @Date:   2018-08-15 09:43:22
 # @Last Modified by:   jonathan fu
-# @Last Modified time: 2018-08-15 11:24:22
+# @Last Modified time: 2018-08-15 14:47:50
 from .models import VisitNumber,Userip
 
 #自定义的函数，不是视图
@@ -15,11 +15,11 @@ def refresh_visitnumber(request,page_name):       #修改网站访问量和访�
 
 def get_Userip(request):
     # 记录访问ip和每个ip的次数
-    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-    if x_forwarded_for:
-        client_ip = x_forwarded_for.split(',')[0]#所以这里是真实的ip
+    if 'HTTP_X_FORWARDED_FOR' in request.META:  # 获取ip
+        client_ip = request.META['HTTP_X_FORWARDED_FOR']
+        client_ip = client_ip.split(",")[0]  # 所以这里是真实的ip
     else:
-        client_ip = request.META.get('REMOTE_ADDR')#这里获得代理ip
+        client_ip = request.META['REMOTE_ADDR']  # 这里获得代理ip
 
     ip_exist = Userip.objects.filter(ip=str(client_ip))
     if ip_exist:  # 判断之前是否存在该ip
