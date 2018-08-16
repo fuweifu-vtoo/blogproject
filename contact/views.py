@@ -28,8 +28,14 @@ def contact(request):
         if form.is_valid():
             # 检查到数据是合法的，调用表单的 save 方法保存数据到数据库，
             # commit=False 的作用是仅仅利用表单的数据生成 Comment 模型类的实例，但还不保存评论数据到数据库。
+            
             message = 'First_name: %s\nLast_name: %s\nEmail Address: %s\nMessage:\n      %s' % (form.first_name, form.last_name, form.email,form.text)
             send_mail('有人通过vtoo.pro联系你哦',message,'1360004212@qq.com',['1360004212@qq.com'],fail_silently=False)
+            try:
+                message_to_client = '\n    %s,你好!我是付威福，表示已经收到了你的信息(σ･ω･)σYO♪，我会尽快查看并给你回复邮件的～笔芯hhh\n\n\n下面是你的信息:\n\n%s' % (form.last_name,message) 
+                send_mail('这是一封来自vtoo.pro的自动回复',message_to_client,'1360004212@qq.com',[form.email],fail_silently=False)
+            except BaseException:
+                pass
             contact = form.save(commit=False)
 
             # 最终将评论数据保存进数据库，调用模型实例的 save 方法
