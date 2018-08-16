@@ -23,12 +23,7 @@ def contact(request):
         form.last_name = request.POST.get("last_name")
         form.email = request.POST.get("email")
         form.text = request.POST.get("text")
-        message = 'First_name: %s\nLast_name: %s\nEmail Address: %s\nMessage:\n      %s' % (form.first_name, form.last_name, form.email,form.text)
-        send_mail('有人通过vtoo.pro联系你哦',message,'1360004212@qq.com',['1360004212@qq.com'],fail_silently=False)
-        message_to_client = '\n    %s,你好!我是付威福，表示已经收到了你的信息｡◕‿◕｡，我会尽快查看并给你回复邮件的～笔芯hhh\n\n\n下面是你的信息:\n\n%s' % (form.last_name,message) 
-        send_mail('这是一封来自vtoo.pro的自动回复',message_to_client,'1360004212@qq.com',[form.email],fail_silently=False)
-
-
+        
         # 当调用 form.is_valid() 方法时，Django 自动帮我们检查表单的数据是否符合格式要求。
         if form.is_valid():
             # 检查到数据是合法的，调用表单的 save 方法保存数据到数据库，
@@ -61,5 +56,5 @@ def contact(request):
     # 不是 post 请求，说明用户没有提交数据，重定向到文章详情页。
     form_empty = ContactForm()
     context = {'form': form_empty,
-                       }
+               }
     return render(request, 'hydrogen/contact.html', context=context)
