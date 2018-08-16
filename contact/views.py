@@ -23,11 +23,13 @@ def contact(request):
         form.last_name = request.POST.get("last_name")
         form.email = request.POST.get("email")
         form.text = request.POST.get("text")
-        
+
         # 当调用 form.is_valid() 方法时，Django 自动帮我们检查表单的数据是否符合格式要求。
         if form.is_valid():
             # 检查到数据是合法的，调用表单的 save 方法保存数据到数据库，
             # commit=False 的作用是仅仅利用表单的数据生成 Comment 模型类的实例，但还不保存评论数据到数据库。
+            message = 'First_name: %s\nLast_name: %s\nEmail Address: %s\nMessage:\n      %s' % (form.first_name, form.last_name, form.email,form.text)
+            send_mail('有人通过vtoo.pro联系你哦',message,'1360004212@qq.com',['1360004212@qq.com'],fail_silently=False)
             contact = form.save(commit=False)
 
             # 最终将评论数据保存进数据库，调用模型实例的 save 方法
