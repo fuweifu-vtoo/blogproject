@@ -49,8 +49,7 @@
 
     <!-- css -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    
-    <link href="{% static 'blog/css/bootstrap.min.test.css' %}" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'blog/css/pace.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/custom.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/highlights/github.css' %}">
@@ -81,7 +80,12 @@
 
 </head>
 
-<body >
+<body style="background-image: url(http://pdcknxeeg.bkt.clouddn.com/WechatIMG2.jpeg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    cursor: url(http://pdcknxeeg.bkt.clouddn.com/1.cur),auto;">
 
 <div id="fh5co-offcanvass">
         <a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close">Menu <i class="icon-cross"></i> </a>
@@ -107,7 +111,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-5 col-xs-8">
                 <div class="logo">
-                    <h1><a href="{% url 'blog:index' %}" ><b>Vtoo</b></a></h1>
+                    <h1 ><a href="{% url 'blog:index' %}" ><b>Vtoo</b></a></h1>
                 </div>
             </div><!-- col-md-4 -->
             <div class="col-md-8 col-sm-7 col-xs-4">
@@ -221,7 +225,7 @@
                         <a href="https://github.com/fuweifu-vtoo" target="_blank" ><img src="{% static 'hydrogen/images/footer_ico-github.png' %}" widht="20px"  height="20px"></a>
                         <a href="https://www.zhihu.com/people/hao-ku-de-wo/activities" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-zhihu.png' %}" widht="20px"  height="20px"></a>
                         <a href="https://music.163.com/#/user/home?id=131743529" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-netease.png' %}" widht="20px"  height="20px"></a>
-                        <a href="{% static 'hydrogen/images/my_wechat_QR_code.jpeg' %}" title=" < FWF19961004 > is my wechat ID " class="image-popup fh5co-board-img" ><img src="{% static 'hydrogen/images/footer_ico-wechat.jpeg' %}" widht="20px"  height="20px"></a>
+                        <a href="{% static 'hydrogen/images/my_wechat_QR_code.jpeg' %}" title=" < FWF19961004 > is my wechat ID " class="image-popup fh5co-board-img" ><img src="{% static 'hydrogen/images/footer_ico-wechat.jpeg' %}" widht="20px"  height="20px" filter=alpha(opacity:30) opacity=0.1></a>
                     </p>
                     <p><small>Copyright &copy; 2018 fuweifu-vtoo All Rights Reserved. <br>
                         <a href="{% url 'hydrogen:hydrogen' %}">本站</a>作品版权为<a href="{% url 'hydrogen:about' %}">本人</a>所有，转载需取得<a href="{% url 'hydrogen:about' %}" target="_blank">本人</a>同意并在明显位置处注明出处<br>
