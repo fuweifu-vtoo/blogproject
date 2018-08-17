@@ -49,7 +49,8 @@
 
     <!-- css -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="{% static 'blog/css/bootstrap.min.test.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'blog/css/pace.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/custom.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/highlights/github.css' %}">
@@ -80,7 +81,7 @@
 
 </head>
 
-<body>
+<body >
 
 <div id="fh5co-offcanvass">
         <a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close">Menu <i class="icon-cross"></i> </a>
@@ -101,8 +102,8 @@
         </p>
 </div>
 
-<div class="container">
-    <header id="site-header">
+<div class="container" >
+    <header id="site-header" style="filter:alpha(opacity:30); opacity:0.7;">         <!--!!!!!!!!!!!!!!!!-->
         <div class="row">
             <div class="col-md-4 col-sm-5 col-xs-8">
                 <div class="logo">
@@ -140,19 +141,18 @@
     </header>
 </div>
 
-<div class="copyrights">Collect from <a href="http://www.cssmoban.com/">网页模板</a></div>
-<div class="copyrights">Modified by <a href="http://zmrenwu.com/">追梦人物的博客</a></div>
-<div class="content-body">
-    <div class="container">
-        <div class="row">
-            <main class="col-md-8">
+
+<div class="content-body" >
+    <div class="container" >
+        <div class="row" >
+            <main class="col-md-8" >
                 {% block main %}
                 {% endblock main %}
             </main>
-            <aside class="col-md-4">
+            <aside class="col-md-4" >
                 {% block toc %}
                 {% endblock toc %}
-                <div class="widget widget-recent-posts">
+                <div class="widget widget-recent-posts" style="filter:alpha(opacity:30); opacity:0.7;">
                     <h3 class="widget-title">最新文章</h3>
                     {% get_recent_posts as recent_post_list %}
                     <ul>
@@ -165,7 +165,7 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <div class="widget widget-archives">
+                <div class="widget widget-archives" style="filter:alpha(opacity:30); opacity:0.7;">
                     <h3 class="widget-title">归档</h3>
                     {% archives as date_list %}
                     <ul>
@@ -179,7 +179,7 @@
                     </ul>
                 </div>
 
-                <div class="widget widget-category">
+                <div class="widget widget-category" style="filter:alpha(opacity:30); opacity:0.7;">
                     <h3 class="widget-title">分类</h3>
                     {% get_categories as category_list %}
                     <ul>
@@ -192,7 +192,7 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <div class="widget widget-tag-cloud">
+                <div class="widget widget-tag-cloud" style="filter:alpha(opacity:30); opacity:0.7;">
                   <h3 class="widget-title">标签云</h3>
                   {% get_tags as tag_list %}
                   <ul>
@@ -205,7 +205,7 @@
                     {% endfor %}
                   </ul>
                 </div>
-                <div class="rss">
+                <div class="rss" >
                     <a href="{% url 'rss' %}"><span class="ion-social-rss-outline"></span> RSS 订阅</a>
                 </div>
             </aside>
@@ -264,7 +264,7 @@
     </footer>
 
 <!-- Mobile Menu -->
-<div class="overlay overlay-hugeinc">
+<div class="overlay overlay-hugeinc" style="filter:alpha(opacity:30); opacity:0.7;" >
     <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
     <nav>
         <ul>
@@ -272,12 +272,9 @@
             <li><a href="{% url 'blog:index' %}">blog</a></li>
             <li><a href="{% url 'todolist:todolist' %}">TodoList</a></li>
             <li><a href="{% url 'hydrogen:about' %}">about</a></li>
-            <li><a href="{% url 'hydrogen:contact' %}">contact</a></li>
-            
+            <li><a href="{% url 'hydrogen:contact' %}">contact</a></li>         
         </ul>
-
     </nav>
-
 </div>
 
 <!-- jQuery -->
