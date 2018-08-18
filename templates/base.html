@@ -73,19 +73,23 @@
     <link rel="stylesheet" href="{% static 'blog/css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/htmleaf-demo.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/pages.css' %}">
-
     
-    
+    <style>
+        #main {
+            background-image: url(http://pdcknxeeg.bkt.clouddn.com/WechatIMG2.jpeg);
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            cursor: url(http://pdcknxeeg.bkt.clouddn.com/1.cur),auto;    
+        }
+    </style>
     
 
 </head>
 
-<body style="background-image: url(http://pdcknxeeg.bkt.clouddn.com/WechatIMG2.jpeg);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    cursor: url(http://pdcknxeeg.bkt.clouddn.com/1.cur),auto;">
+<body id="main" >
+<div id="huaban" style="z-index:1;position: absolute;">
 
 <div id="fh5co-offcanvass">
         <a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close">Menu <i class="icon-cross"></i> </a>
@@ -108,10 +112,10 @@
 
 <div class="container" >
     <header id="site-header" style="filter:alpha(opacity:30); opacity:0.7;">         <!--!!!!!!!!!!!!!!!!-->
-        <div class="row">
+        <div class="row" style="z-index: 20;position: inherit;">
             <div class="col-md-4 col-sm-5 col-xs-8">
                 <div class="logo">
-                    <h1 ><a href="{% url 'blog:index' %}" ><b>Vtoo</b></a></h1>
+                    <h1 ><a href="{% url 'blog:index' %}" ><b>Vtoo[七夕专属]</b></a></h1>
                 </div>
             </div><!-- col-md-4 -->
             <div class="col-md-8 col-sm-7 col-xs-4">
@@ -156,7 +160,7 @@
             <aside class="col-md-4" >
                 {% block toc %}
                 {% endblock toc %}
-                <div class="widget widget-recent-posts" style="filter:alpha(opacity:30); opacity:0.7;">
+                <div class="widget widget-recent-posts" style="filter:alpha(opacity:30); opacity:0.7;z-index:2;position: inherit;">
                     <h3 class="widget-title">最新文章</h3>
                     {% get_recent_posts as recent_post_list %}
                     <ul>
@@ -169,7 +173,7 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <div class="widget widget-archives" style="filter:alpha(opacity:30); opacity:0.7;">
+                <div class="widget widget-archives" style="filter:alpha(opacity:30); opacity:0.7;z-index:2;position: inherit;">
                     <h3 class="widget-title">归档</h3>
                     {% archives as date_list %}
                     <ul>
@@ -183,7 +187,7 @@
                     </ul>
                 </div>
 
-                <div class="widget widget-category" style="filter:alpha(opacity:30); opacity:0.7;">
+                <div class="widget widget-category" style="filter:alpha(opacity:30); opacity:0.7;z-index:2;position: inherit;">
                     <h3 class="widget-title">分类</h3>
                     {% get_categories as category_list %}
                     <ul>
@@ -196,7 +200,7 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <div class="widget widget-tag-cloud" style="filter:alpha(opacity:30); opacity:0.7;">
+                <div class="widget widget-tag-cloud" style="filter:alpha(opacity:30); opacity:0.7;z-index:2;position: inherit;">
                   <h3 class="widget-title">标签云</h3>
                   {% get_tags as tag_list %}
                   <ul>
@@ -298,6 +302,25 @@
 
 <script src="{% static 'blog/js/script.js' %}"></script>
 
+<!--下面是花瓣飞舞的代码-->
+    <script src="{% static 'blog/js/bundle.js' %}"></script>
+    <script>
+        var demo;
+        var FallingPetals = wy.effect.FallingPetals;
+        $(document).ready(function() {
+            $("body").nodoubletapzoom();
 
+            demo = new FallingPetals($('#huaban'), {
+                images: ["{% static 'blog/img/petal-1.png' %}", "{% static 'blog/img/petal-2.png' %}", "{% static 'blog/img/petal-2.png' %}", "{% static 'blog/img/petal-2.png' %}","{% static 'blog/img/petal-2.png' %}"],
+                count: 10,               // 花瓣数量
+                rotation: true,         // 花瓣可以旋转
+                direction: -1,          // 1：从左向右飘；-1：从右向左飘
+                speedRange: [1, 15],     // 调节横向速度范围 （值越大越快）
+                fallingConstance: 8,    // 调节纵向掉落速度 （值越大越快）
+            });
+            demo.start();
+        });
+    </script>
+<div>       <!--在body标签之前加上div，来确定花瓣飞舞的位置，不能直接加在body上-->
 </body>
 </html>
