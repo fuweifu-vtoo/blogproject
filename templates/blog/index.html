@@ -7,7 +7,7 @@
                 <p>{{ error_msg }}</p>
               {% endif %}
               {% for post in post_list %}
-                <article class="post post-{{ post.pk }}" style="filter:alpha(opacity:30); opacity:0.7;z-index:2;position: inherit;border-radius: 10px 10px 10px 10px;margin-bottom: -5px;">
+                <article class="post post-{{ post.pk }}" style="filter:alpha(opacity:30); opacity:0.7;z-index:2;position: inherit;border-radius: 10px 10px 10px 10px;margin-bottom: -3px;">
                     <header class="entry-header">
                         <h1 class="entry-title">
                             <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
@@ -39,7 +39,7 @@
                 </div>
                 -->
                 {% if is_paginated %}
-                <div class="digg">
+                <div class="digg" style="margin-top: 20px ">
                   {% if first %}
                     <a href="?page=1">1</a>
                   {% endif %}
