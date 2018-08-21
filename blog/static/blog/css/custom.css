@@ -443,7 +443,8 @@ img {
 
 .rss {
     font-size: 21px;
-    margin-top: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px; 
 }
 
 .rss a {
