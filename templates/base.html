@@ -31,7 +31,6 @@
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'blog/css/pace.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/custom.css' %}">
-    <link rel="stylesheet" href="{% static 'blog/css/highlights/github.css' %}">
 
 
 
@@ -53,11 +52,11 @@
     <link rel="stylesheet" href="{% static 'blog/css/htmleaf-demo.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/pages.css' %}">
 
-    <!--音乐播放器的一个css和两个js-->
+    <!--音乐播放器的一个css和三个js-->
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/css.css' %}">
     <!--<script src="{% static 'blog/js/jquery.min.js' %}"></script>-->
     <script type="text/javascript" src="{% static 'blog/js/TweenMax.min.js' %}"></script>
-    
+
     <style>
         #main {
             background-image: url(http://pdcknxeeg.bkt.clouddn.com/WechatIMG2.jpeg);
@@ -185,11 +184,11 @@
                       <div class="player__albumImg active-song" 
                                 data-author="晚安君"
                                 data-song="未闻花名"
-                                data data-src="http://pdcknxeeg.bkt.clouddn.com/%E6%99%9A%E5%AE%89%E5%90%9B%20-%20%E6%9C%AA%E9%97%BB%E8%8A%B1%E5%90%8D%EF%BC%88%E4%B8%AD%E6%96%87%E7%89%88%EF%BC%89.mp3" style="background-image: url({% static 'blog/img/a1.png' %})"> </div>
+                                data data-src="http://pdcknxeeg.bkt.clouddn.com/%E6%99%9A%E5%AE%89%E5%90%9B%20-%20%E6%9C%AA%E9%97%BB%E8%8A%B1%E5%90%8D%EF%BC%88%E4%B8%AD%E6%96%87%E7%89%88%EF%BC%89.mp3" style="background-image: url(http://pd3aouuev.bkt.clouddn.com/WechatIMG7_822.jpeg)"> </div>
                       <div class="player__albumImg" 
                                 data-author="晚安君"
                                 data-song="未闻花名"
-                                data data-src="http://pdcknxeeg.bkt.clouddn.com/%E6%99%9A%E5%AE%89%E5%90%9B%20-%20%E6%9C%AA%E9%97%BB%E8%8A%B1%E5%90%8D%EF%BC%88%E4%B8%AD%E6%96%87%E7%89%88%EF%BC%89.mp3" style="background-image: url({% static 'blog/img/a1.png' %})"> </div>
+                                data data-src="http://pdcknxeeg.bkt.clouddn.com/%E6%99%9A%E5%AE%89%E5%90%9B%20-%20%E6%9C%AA%E9%97%BB%E8%8A%B1%E5%90%8D%EF%BC%88%E4%B8%AD%E6%96%87%E7%89%88%EF%BC%89.mp3" style="background-image: url(http://pd3aouuev.bkt.clouddn.com/WechatIMG9_22.jpeg)"> </div>
                     </div>
                     <div class="player__controls">
                       <div class="player__prev">
@@ -239,8 +238,7 @@
         </div>
     </div>
 </div>
-    <footer id="fh5co-footer">
-        
+    <footer id="fh5co-footer">    
         <div class="container">
             <div class="row row-padded">
                 <div class="col-md-12 text-center">
@@ -307,7 +305,7 @@
 
 
 <script src="{% static 'blog/js/script.js' %}"></script>
-
+<script src="{% static 'blog/js/music.js' %}"></script>
 <!--下面是花瓣飞舞的代码-->
     <script src="{% static 'blog/js/bundle.js' %}"></script>
     <script>
@@ -328,117 +326,6 @@
         });
     </script>
 <!--下面是音乐播放器的代码-->
-<script type="text/javascript">
-  $(document).ready(function () {
-    var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', $('.active-song').attr('data-src'));
-
-    var tl = new TimelineMax();
-    tl.to('.player__albumImg', 3, {
-        rotation: '360deg',
-        repeat: -1,
-        ease: Power0.easeNone
-    }, '-=0.2');
-    tl.pause();
-
-    $('.player__play').click(function () {
-
-        if ($('.player').hasClass('play')) {
-            $('.player').removeClass('play');
-            audioElement.pause();
-            TweenMax.to('.player__albumImg', 0.1, {
-                scale: 1,
-                ease: Power0.easeNone
-            })
-            tl.pause();
-        } else {
-            $('.player').addClass('play');
-            audioElement.play();
-            TweenMax.to('.player__albumImg', 0.1, {
-                scale: 1,
-                ease: Power0.easeNone
-            })
-            tl.resume();
-        }
-
-    });
-
-
-    var playhead = document.getElementById("playhead");
-    audioElement.addEventListener("timeupdate", function () {
-        var duration = this.duration;
-        var currentTime = this.currentTime;
-        var percentage = (currentTime / duration) * 100;
-        playhead.style.width = percentage * 4 + 'px';
-    });
-
-    function updateInfo() {
-        $('.player__author').text($('.active-song').attr('data-author'));
-        $('.player__song').text($('.active-song').attr('data-song'));
-    }
-    updateInfo();
-
-    $('.player__next').click(function () {
-        if ($('.player .player__albumImg.active-song').is(':last-child')) {
-            $('.player__albumImg.active-song').removeClass('active-song');
-            $('.player .player__albumImg:first-child').addClass('active-song');
-            audioElement.addEventListener("timeupdate", function () {
-                var duration = this.duration;
-                var currentTime = this.currentTime;
-                var percentage = (currentTime / duration) * 100;
-                playhead.style.width = percentage * 4 + 'px';
-            });
-        } else {
-            $('.player__albumImg.active-song').removeClass('active-song').next().addClass('active-song');
-            audioElement.addEventListener("timeupdate", function () {
-                var duration = this.duration;
-                var currentTime = this.currentTime;
-                var percentage = (currentTime / duration) * 100;
-                playhead.style.width = percentage + '%';
-            });
-            TweenMax.to('.player__albumImg', 0.1, {
-                scale: 1,
-                ease: Power0.easeNone
-            })
-            tl.resume();
-
-        }
-        updateInfo();
-        audioElement.setAttribute('src', $('.active-song').attr('data-src'));
-        audioElement.play();
-    });
-
-    $('.player__prev').click(function () {
-        if ($('.player .player__albumImg.active-song').is(':first-child')) {
-            $('.player__albumImg.active-song').removeClass('active-song');
-            $('.player .player__albumImg:last-child').addClass('active-song');
-            audioElement.addEventListener("timeupdate", function () {
-                var duration = this.duration;
-                var currentTime = this.currentTime;
-                var percentage = (currentTime / duration) * 100;
-                playhead.style.width = percentage * 4 + 'px';
-            });
-        } else {
-            $('.player__albumImg.active-song').removeClass('active-song').prev().addClass('active-song');
-            audioElement.addEventListener("timeupdate", function () {
-                var duration = this.duration;
-                var currentTime = this.currentTime;
-                var percentage = (currentTime / duration) * 100;
-                playhead.style.width = percentage + 'px';
-            });
-            TweenMax.to('.player__albumImg', 0.1, {
-                scale: 1,
-                ease: Power0.easeNone
-            })
-            tl.resume();
-        }
-        updateInfo();
-        audioElement.setAttribute('src', $('.active-song').attr('data-src'));
-        audioElement.play();
-    });
-
-});
-</script>
 <div>       <!--在body标签之前加上div，来确定花瓣飞舞的位置，不能直接加在body上-->
 </body>
 </html>
