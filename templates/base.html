@@ -31,14 +31,6 @@
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'blog/css/pace.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/custom.css' %}">
-
-
-
-    <!-- js -->
-    <script src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="{% static 'blog/js/pace.min.js' %}"></script>
-    <script src="{% static 'blog/js/modernizr.custom.js' %}"></script>
     
     <!--highlighted -->
      <style>
@@ -52,28 +44,23 @@
     <link rel="stylesheet" href="{% static 'blog/css/htmleaf-demo.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/pages.css' %}">
 
-    <!--音乐播放器的一个css和三个js-->
+    <!--音乐播放器的一个css-->
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/css.css' %}">
-    <!--<script src="{% static 'blog/js/jquery.min.js' %}"></script>-->
-    <script type="text/javascript" src="{% static 'blog/js/TweenMax.min.js' %}"></script>
 
     <style>
         #main {
             background-image: url(http://pdcknxeeg.bkt.clouddn.com/WechatIMG2.jpeg);
             background-position: 0px 0px;
-            background-size: cover;
+            background-size: 100% 100%;
             background-repeat: no-repeat;
             background-attachment: fixed;
             cursor: url(http://pdcknxeeg.bkt.clouddn.com/1.cur),auto;    
         }
     </style>
-    
-
 </head>
 
 <body id="main" >
 <div id="huaban" style="z-index:1;position: absolute;">
-
 <div class="container">
     <header id="site-header" style="filter:alpha(opacity:30); opacity:0.7;border-radius: 10px 10px 10px 10px;">         <!--!!!!!!!!!!!!!!!!-->
         <div class="row" style="z-index: 20;position: inherit;">
@@ -238,56 +225,56 @@
         </div>
     </div>
 </div>
-    <footer id="fh5co-footer">    
-        <div class="container">
-            <div class="row row-padded">
-                <div class="col-md-12 text-center">
-                    <p class="fh5co-social-icons">
-                        <a href="https://github.com/fuweifu-vtoo" target="_blank" ><img src="{% static 'hydrogen/images/footer_ico-github.png' %}" widht="20px"  height="20px"></a>
-                        <a href="https://www.zhihu.com/people/hao-ku-de-wo/activities" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-zhihu.png' %}" widht="20px"  height="20px"></a>
-                        <a href="https://music.163.com/#/user/home?id=131743529" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-netease.png' %}" widht="20px"  height="20px"></a>
-                        <a href="https://music.163.com/#/user/home?id=131743529" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-jianshu.png' %}" widht="20px"  height="20px"></a>
-                        <a href="{% static 'hydrogen/images/my_wechat_QR_code.jpeg' %}" title=" < FWF19961004 > is my wechat ID " class="image-popup fh5co-board-img" ><img src="{% static 'hydrogen/images/footer_ico-wechat.png' %}" widht="20px"  height="20px" filter=alpha(opacity:30) opacity=0.1></a>
-                    </p>
-                    <p><small>Copyright &copy; 2018 fuweifu-vtoo All Rights Reserved. <br>
-                        <a href="{% url 'hydrogen:hydrogen' %}">本站</a>作品版权为<a href="{% url 'hydrogen:about' %}">本人</a>所有，转载需取得<a href="{% url 'hydrogen:about' %}" target="_blank">本人</a>同意并在明显位置处注明出处<br>
-                        <span>网站已运行了</span>
-                        <span id='birth'></span>
-                        <span>天</span>
-                        <span id='hour'></span>
-                        <span>小时</span>
-                        <span id='minute'></span>
-                        <span>分</span>
-                        <span id='second'></span>
-                        <span>秒</span>
-                        <span>  </span>
-                        <span>托管于腾讯云</span>
-                        <span>  </span>
-                        <span>使用 七牛云 镜像存储</span>
-                        </small></p>
-                    <script>
-                        function mytime(){
-                        var date = new Date();
-                        var y = date.getFullYear();
-                        var m = date.getMonth()+1;
-                        var d = date.getDate();
-                        var h = (date.getHours()+13)>23?date.getHours()-11:date.getHours()+13;
-                        var min = (date.getMinutes()+37)>59?date.getMinutes()-23:date.getMinutes()+37;
-                        var second = (date.getSeconds()+9)>59?date.getSeconds()-51:date.getSeconds()+9;
-                        var pass1 = Date.parse('2018/7/25');  //开始的日期
-                        var pass2 = Date.parse(y+'/'+m+'/'+d);  //当前日期
-                        var time = (pass2-pass1)/(1000*60*60*24);  //过去的天数
-                        document.getElementById("birth").innerHTML=(time);
-                        document.getElementById("hour").innerHTML=(h);
-                        document.getElementById("minute").innerHTML=(min);
-                        document.getElementById("second").innerHTML=(second);
-                        }
-                        setInterval(function() {mytime()},1000);
-                    </script>
-                </div>
+<footer id="fh5co-footer"style="margin-bottom: 50px;">    
+    <div class="container">
+        <div class="row row-padded">
+            <div class="col-md-12 text-center">
+                <p class="fh5co-social-icons">
+                    <a href="https://github.com/fuweifu-vtoo" target="_blank" ><img src="{% static 'hydrogen/images/footer_ico-github.png' %}" widht="20px"  height="20px"></a>
+                    <a href="https://www.zhihu.com/people/hao-ku-de-wo/activities" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-zhihu.png' %}" widht="20px"  height="20px"></a>
+                    <a href="https://music.163.com/#/user/home?id=131743529" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-netease.png' %}" widht="20px"  height="20px"></a>
+                    <a href="https://music.163.com/#/user/home?id=131743529" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-jianshu.png' %}" widht="20px"  height="20px"></a>
+                    <a href="{% static 'hydrogen/images/my_wechat_QR_code.jpeg' %}" title=" < FWF19961004 > is my wechat ID " class="image-popup fh5co-board-img" ><img src="{% static 'hydrogen/images/footer_ico-wechat.png' %}" widht="20px"  height="20px" filter=alpha(opacity:30) opacity=0.1></a>
+                </p>
+                <p><small>Copyright &copy; 2018 fuweifu-vtoo All Rights Reserved. <br>
+                    <a href="{% url 'hydrogen:hydrogen' %}">本站</a>作品版权为<a href="{% url 'hydrogen:about' %}">本人</a>所有，转载需取得<a href="{% url 'hydrogen:about' %}" target="_blank">本人</a>同意并在明显位置处注明出处<br>
+                    <span>网站已运行了</span>
+                    <span id='birth'></span>
+                    <span>天</span>
+                    <span id='hour'></span>
+                    <span>小时</span>
+                    <span id='minute'></span>
+                    <span>分</span>
+                    <span id='second'></span>
+                    <span>秒</span>
+                    <span>  </span>
+                    <span>托管于腾讯云</span>
+                    <span>  </span>
+                    <span>使用 七牛云 镜像存储</span>
+                    </small></p>
+                <script>
+                    function mytime(){
+                    var date = new Date();
+                    var y = date.getFullYear();
+                    var m = date.getMonth()+1;
+                    var d = date.getDate();
+                    var h = (date.getHours()+13)>23?date.getHours()-11:date.getHours()+13;
+                    var min = (date.getMinutes()+37)>59?date.getMinutes()-23:date.getMinutes()+37;
+                    var second = (date.getSeconds()+9)>59?date.getSeconds()-51:date.getSeconds()+9;
+                    var pass1 = Date.parse('2018/7/25');  //开始的日期
+                    var pass2 = Date.parse(y+'/'+m+'/'+d);  //当前日期
+                    var time = (pass2-pass1)/(1000*60*60*24);  //过去的天数
+                    document.getElementById("birth").innerHTML=(time);
+                    document.getElementById("hour").innerHTML=(h);
+                    document.getElementById("minute").innerHTML=(min);
+                    document.getElementById("second").innerHTML=(second);
+                    }
+                    setInterval(function() {mytime()},1000);
+                </script>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
 <!-- Mobile Menu -->
 <div class="overlay overlay-hugeinc" style="filter:alpha(opacity:30); opacity:0.7;z-index: 2;position: fixed;" >
@@ -304,28 +291,38 @@
 </div>
 
 
+<!-- blog js -->
+    <script src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static 'blog/js/pace.min.js' %}"></script>
+    <script src="{% static 'blog/js/modernizr.custom.js' %}"></script>
 <script src="{% static 'blog/js/script.js' %}"></script>
-<script src="{% static 'blog/js/music.js' %}"></script>
-<!--下面是花瓣飞舞的代码-->
-    <script src="{% static 'blog/js/bundle.js' %}"></script>
-    <script>
-        var demo;
-        var FallingPetals = wy.effect.FallingPetals;
-        $(document).ready(function() {
-            $("body").nodoubletapzoom();
 
-            demo = new FallingPetals($('#huaban'), {
-                images: ["{% static 'blog/img/petal-1.png' %}", "{% static 'blog/img/petal-2.png' %}", "{% static 'blog/img/petal-2.png' %}", "{% static 'blog/img/petal-2.png' %}","{% static 'blog/img/petal-2.png' %}"],
-                count: 10,               // 花瓣数量
-                rotation: true,         // 花瓣可以旋转
-                direction: -1,          // 1：从左向右飘；-1：从右向左飘
-                speedRange: [1, 15],     // 调节横向速度范围 （值越大越快）
-                fallingConstance: 8,    // 调节纵向掉落速度 （值越大越快）
-            });
-            demo.start();
+<!--下面是music的三个js文件-->
+<script type="text/javascript" src="{% static 'blog/js/TweenMax.min.js' %}"></script>
+<!--<script src="{% static 'blog/js/jquery.min.js' %}"></script>-->
+<script src="{% static 'blog/js/music.js' %}"></script>
+
+<!--下面是花瓣飞舞的部分js代码-->
+<script src="{% static 'blog/js/bundle.js' %}"></script>
+<script>
+    var demo;
+    var FallingPetals = wy.effect.FallingPetals;
+    $(document).ready(function() {
+        $("body").nodoubletapzoom();
+
+        demo = new FallingPetals($('#huaban'), {
+            images: ["{% static 'blog/img/petal-1.png' %}", "{% static 'blog/img/petal-2.png' %}", "{% static 'blog/img/petal-2.png' %}", "{% static 'blog/img/petal-2.png' %}","{% static 'blog/img/petal-2.png' %}"],
+            count: 10,               // 花瓣数量
+            rotation: true,         // 花瓣可以旋转
+            direction: -1,          // 1：从左向右飘；-1：从右向左飘
+            speedRange: [1, 15],     // 调节横向速度范围 （值越大越快）
+            fallingConstance: 8,    // 调节纵向掉落速度 （值越大越快）
         });
-    </script>
-<!--下面是音乐播放器的代码-->
+        demo.start();
+    });
+</script>
+
 <div>       <!--在body标签之前加上div，来确定花瓣飞舞的位置，不能直接加在body上-->
 </body>
 </html>
