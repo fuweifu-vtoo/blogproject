@@ -23,6 +23,9 @@ def about(request):
     refresh_visitnumber(request,'about')
     return render(request, 'hydrogen/about.html')
 
+def profile(request):
+    return render(request, 'hydrogen/profile.html')
+
 def hydrogen(request):
     image_list = Image.objects.all().order_by('-created_time')
     return render(request, 'hydrogen/index.html', context={'image_list': image_list})

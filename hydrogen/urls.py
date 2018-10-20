@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='hydrogen'),
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^about/$', views.about, name='about'),
+    url(r'^profile/$', views.profile, name='profile'),
 ]
