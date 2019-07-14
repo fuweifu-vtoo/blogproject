@@ -74,7 +74,9 @@ class IndexView(ListView):
         所以我们复写该方法，以便我们能够自己再插入一些我们自定义的模板变量进去。
         """
         # 首先记录用户ip和home页面的访问次数
+        #------------------
         refresh_visitnumber(self.request,'blog')       #类视图函数中没有request参数，其实是在self中，用self.request
+        #------------------
         get_Userip(self.request)
         # 获得父类生成的传递给模板的字典。
         context = super().get_context_data(**kwargs)

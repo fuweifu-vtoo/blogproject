@@ -16,11 +16,15 @@ def contact(request):
     form = ContactForm()   #这里不用写成 form = ContactForm(request.POST)，因为我只要一个结构。
     context = {'form': form,
                }
+    #------------
     refresh_visitnumber(request,'contact')
+    #------------
     return render(request, 'hydrogen/contact.html',context=context)
 
 def about(request):
+    #-------------
     refresh_visitnumber(request,'about')
+    #------------
     return render(request, 'hydrogen/about.html')
 
 def profile(request):
@@ -46,7 +50,9 @@ class IndexView(ListView):
         """
 
         # 首先记录用户ip和home页面的访问次数
+        #------------------
         refresh_visitnumber(self.request,'home')       #类视图函数中没有request参数，其实是在self中，用self.request
+        #------------------
         get_Userip(self.request)
         # 父类生成的传递给模板的字典。
         context = super().get_context_data(**kwargs)
