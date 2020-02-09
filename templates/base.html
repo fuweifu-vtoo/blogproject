@@ -25,7 +25,10 @@
      -->
     
     <!-- css -->
+    <!--
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    -->
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'blog/css/pace.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/custom.css' %}">
@@ -44,6 +47,8 @@
 
     <!--音乐播放器的一个css-->
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/css.css' %}">
+
+    <!--blog页面的颜色和背景设置-->
     <style>
         #main {
             background-image: url(!!!!!!!!!!!!!!!!!!!!!!!!!!);
@@ -55,7 +60,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             cursor: url(http://pdcknxeeg.bkt.clouddn.com/1.cur),auto;
-            background-color:#EADAE4;     
+            background-color:#e7e7ff;     
         }
     </style>
 </head>
@@ -79,11 +84,11 @@
                     </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="cl-effect-11"><a href="{% url 'hydrogen:hydrogen' %}" data-hover="home">home</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="blog">blog</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'hydrogen:hydrogen' %}" data-hover="Home">Home</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="Blog">Blog</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'hydrogen:about' %}" data-hover="About">About</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'hydrogen:contact' %}" data-hover="Contact">Contact</a></li>
                             <li class="cl-effect-11"><a href="{% url 'todolist:todolist' %}" data-hover="TodoList">TodoList</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'hydrogen:about' %}" data-hover="about">about</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'hydrogen:contact' %}" data-hover="contact">contact</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -222,7 +227,8 @@
         </div>
     </div>
 </div>
-<footer id="fh5co-footer"style="margin-bottom: 50px;">    
+
+<footer id="fh5co-footer" style="margin-bottom: 50px;">    
     <div class="container">
         <div class="row row-padded">
             <div class="col-md-12 text-center">
@@ -233,7 +239,7 @@
                     <a href="https://weibo.com/u/5758695222?topnav=1&wvr=6&topsug=1&is_all=1" target="_blank"><img src="{% static 'hydrogen/images/weibo.png' %}" widht="20px"  height="20px"></a>
                     <a href="{% static 'hydrogen/images/my_wechat_QR_code.jpeg' %}" title=" < FWF19961004 > is my wechat ID " class="image-popup fh5co-board-img" ><img src="{% static 'hydrogen/images/footer_ico-wechat.png' %}" widht="20px"  height="20px" filter=alpha(opacity:30) opacity=0.1></a>
                 </p>
-                <p><small>Copyright &copy; 2019 fuweifu-vtoo All Rights Reserved. <br>蜀ICP备18031644号<br>
+                <p><small>Copyright &copy; 2019 fuweifu-vtoo All Rights Reserved. <br>蜀ICP备xxxxxx号<br>
                     <a href="{% url 'hydrogen:hydrogen' %}">本站</a>作品版权为<a href="{% url 'hydrogen:about' %}">本人</a>所有，转载需取得<a href="{% url 'hydrogen:about' %}" target="_blank">本人</a>同意并在明显位置处注明出处<br>
                     <span>网站已运行了</span>
                     <span id='birth'></span>
@@ -278,11 +284,11 @@
     <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
     <nav>
         <ul>
-            <li><a href="{% url 'hydrogen:hydrogen' %}">home</a></li>
-            <li><a href="{% url 'blog:index' %}">blog</a></li>
-            <li><a href="{% url 'todolist:todolist' %}">TodoList</a></li>
-            <li><a href="{% url 'hydrogen:about' %}">about</a></li>
-            <li><a href="{% url 'hydrogen:contact' %}">contact</a></li>         
+            <li><a href="{% url 'hydrogen:hydrogen' %}">Home</a></li>
+            <li><a href="{% url 'blog:index' %}">Blog</a></li>
+            <li><a href="{% url 'hydrogen:about' %}">About</a></li>
+            <li><a href="{% url 'hydrogen:contact' %}">Contact</a></li>    
+            <li><a href="{% url 'todolist:todolist' %}">TodoList</a></li>     
         </ul>
     </nav>
 </div>

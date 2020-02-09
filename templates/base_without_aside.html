@@ -28,7 +28,10 @@
     <link rel="stylesheet" href="{% static 'blog/css/pages.css' %}">
 
     <!-- css -->
+    <!--
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    -->
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'blog/css/pace.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/custom.css' %}">
@@ -47,12 +50,28 @@
         }
     </style>
 
+    <!--blog页面的颜色和背景设置-->
+    <style>
+        #main {
+            background-image: url(!!!!!!!!!!!!!!!!!!!!!!!!!!);
+            background-position: 0px 0px;
+            background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            cursor: url(http://pdcknxeeg.bkt.clouddn.com/1.cur),auto;
+            background-color:#e7e7ff;     
+        }
+    </style>
+
 
 </head>
 
-<body>
+<body id="main">
 <div class="container">
-    <header id="site-header">
+    <header id="site-header" style="filter:alpha(opacity:30); opacity:0.7;border-radius: 10px 10px 10px 10px;">
         <div class="row">
             <div class="col-md-4 col-sm-5 col-xs-8">
                 <div class="logo">
@@ -70,21 +89,21 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="cl-effect-11"><a href="{% url 'hydrogen:hydrogen' %}" data-hover="home">home</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="blog">blog</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'hydrogen:hydrogen' %}" data-hover="Home">Home</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="Blog">Blog</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'hydrogen:about' %}" data-hover="About">About</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'hydrogen:contact' %}" data-hover="Contact">Contact</a></li>
                             <li class="cl-effect-11"><a href="{% url 'todolist:todolist' %}" data-hover="TodoList">TodoList</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'hydrogen:about' %}" data-hover="about">about</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'hydrogen:contact' %}" data-hover="contact">contact</a></li>
                             
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
                 <div id="header-search-box">
-                    <a id="search-menu" href="#"><span id="search-icon" class="ion-ios-search-strong"></span></a>
+                    <a id="search-menu" href="#"><span id="search-icon" class="icon ion-ios-search-strong"></span></a>
                     <div id="search-form" class="search-form">
                         <form role="search" method="get" id="searchform" action="{% url 'haystack_search' %}">
                             <input type="search" name="q" placeholder="搜索" required>
-                            <button type="submit"><span class="ion-ios-search-strong"></span></button>
+                            <button type="submit"><span class="icon ion-ios-search-strong"></span></button>
                         </form>
                     </div>
                 </div>
@@ -96,9 +115,9 @@
 <div class="copyrights">Collect from <a href="http://www.cssmoban.com/">网页模板</a></div>
 <div class="copyrights">Modified by <a href="http://zmrenwu.com/">追梦人物的博客</a></div>
 
-<div class="content-body">
+<div class="content-body" >
     <div class="container">
-        <div class="row">
+        <div class="row" style="filter:alpha(opacity:30); opacity:0.7;border-radius: 10px 10px 10px 10px;">
             <main class="col-md-12">
                 {% block main %}
                 {% endblock main %}
@@ -106,57 +125,57 @@
         </div>
     </div>
 </div>
-    <footer id="fh5co-footer">
-        
-        <div class="container">
-            <div class="row row-padded">
-                <div class="col-md-12 text-center">
-                    <p class="fh5co-social-icons">
-                        <a href="https://github.com/fuweifu-vtoo" target="_blank" ><img src="{% static 'hydrogen/images/footer_ico-github.png' %}" widht="20px"  height="20px"></a>
-                        <a href="https://www.zhihu.com/people/hao-ku-de-wo/activities" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-zhihu.png' %}" widht="20px"  height="20px"></a>
-                        <a href="https://music.163.com/#/user/home?id=131743529" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-netease.png' %}" widht="20px"  height="20px"></a>
-                        <a href="https://weibo.com/u/5758695222?topnav=1&wvr=6&topsug=1&is_all=1" target="_blank"><img src="{% static 'hydrogen/images/weibo.png' %}" widht="20px"  height="20px"></a>
-                        <a href="{% static 'hydrogen/images/my_wechat_QR_code.jpeg' %}" title=" < FWF19961004 > is my wechat ID " class="image-popup fh5co-board-img" ><img src="{% static 'hydrogen/images/footer_ico-wechat.png' %}" widht="20px"  height="20px"></a>
-                    </p>
-                    <p><small>Copyright &copy; 2018 fuweifu-vtoo All Rights Reserved. <br>蜀ICP备18031644号<br>
-                        <a href="{% url 'hydrogen:hydrogen' %}">本站</a>作品版权为<a href="{% url 'hydrogen:about' %}">本人</a>所有，转载需取得<a href="{% url 'hydrogen:about' %}" target="_blank">本人</a>同意并在明显位置处注明出处<br>
-                        <span>网站已运行了</span>
-                        <span id='birth'></span>
-                        <span>天</span>
-                        <span id='hour'></span>
-                        <span>小时</span>
-                        <span id='minute'></span>
-                        <span>分</span>
-                        <span id='second'></span>
-                        <span>秒</span>
-                        <span>  </span>
-                        <span>托管于腾讯云</span>
-                        <span>  </span>
-                        <span>使用 七牛云 镜像存储</span>
-                        </small></p>
-                    <script>
-                        function mytime(){
-                        var date = new Date();
-                        var y = date.getFullYear();
-                        var m = date.getMonth()+1;
-                        var d = date.getDate();
-                        var h = (date.getHours()+13)>23?date.getHours()-11:date.getHours()+13;
-                        var min = (date.getMinutes()+37)>59?date.getMinutes()-23:date.getMinutes()+37;
-                        var second = (date.getSeconds()+9)>59?date.getSeconds()-51:date.getSeconds()+9;
-                        var pass1 = Date.parse('2018/7/25');  //开始的日期
-                        var pass2 = Date.parse(y+'/'+m+'/'+d);  //当前日期
-                        var time = (pass2-pass1)/(1000*60*60*24);  //过去的天数
-                        document.getElementById("birth").innerHTML=(time);
-                        document.getElementById("hour").innerHTML=(h);
-                        document.getElementById("minute").innerHTML=(min);
-                        document.getElementById("second").innerHTML=(second);
-                        }
-                        setInterval(function() {mytime()},1000);
-                    </script>
-                </div>
+
+<footer id="fh5co-footer" style="margin-bottom: 50px;">
+    <div class="container">
+        <div class="row row-padded">
+            <div class="col-md-12 text-center">
+                <p class="fh5co-social-icons">
+                    <a href="https://github.com/fuweifu-vtoo" target="_blank" ><img src="{% static 'hydrogen/images/footer_ico-github.png' %}" widht="20px"  height="20px"></a>
+                    <a href="https://www.zhihu.com/people/hao-ku-de-wo/activities" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-zhihu.png' %}" widht="20px"  height="20px"></a>
+                    <a href="https://music.163.com/#/user/home?id=131743529" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-netease.png' %}" widht="20px"  height="20px"></a>
+                    <a href="https://weibo.com/u/5758695222?topnav=1&wvr=6&topsug=1&is_all=1" target="_blank"><img src="{% static 'hydrogen/images/weibo.png' %}" widht="20px"  height="20px"></a>
+                    <a href="{% static 'hydrogen/images/my_wechat_QR_code.jpeg' %}" title=" < FWF19961004 > is my wechat ID " class="image-popup fh5co-board-img" ><img src="{% static 'hydrogen/images/footer_ico-wechat.png' %}" widht="20px"  height="20px"></a>
+                </p>
+                <p><small>Copyright &copy; 2018 fuweifu-vtoo All Rights Reserved. <br>蜀ICP备xxxxxx号<br>
+                    <a href="{% url 'hydrogen:hydrogen' %}">本站</a>作品版权为<a href="{% url 'hydrogen:about' %}">本人</a>所有，转载需取得<a href="{% url 'hydrogen:about' %}" target="_blank">本人</a>同意并在明显位置处注明出处<br>
+                    <span>网站已运行了</span>
+                    <span id='birth'></span>
+                    <span>天</span>
+                    <span id='hour'></span>
+                    <span>小时</span>
+                    <span id='minute'></span>
+                    <span>分</span>
+                    <span id='second'></span>
+                    <span>秒</span>
+                    <span>  </span>
+                    <span>托管于腾讯云</span>
+                    <span>  </span>
+                    <span>使用 七牛云 镜像存储</span>
+                    </small></p>
+                <script>
+                    function mytime(){
+                    var date = new Date();
+                    var y = date.getFullYear();
+                    var m = date.getMonth()+1;
+                    var d = date.getDate();
+                    var h = (date.getHours()+13)>23?date.getHours()-11:date.getHours()+13;
+                    var min = (date.getMinutes()+37)>59?date.getMinutes()-23:date.getMinutes()+37;
+                    var second = (date.getSeconds()+9)>59?date.getSeconds()-51:date.getSeconds()+9;
+                    var pass1 = Date.parse('2018/7/25');  //开始的日期
+                    var pass2 = Date.parse(y+'/'+m+'/'+d);  //当前日期
+                    var time = (pass2-pass1)/(1000*60*60*24);  //过去的天数
+                    document.getElementById("birth").innerHTML=(time);
+                    document.getElementById("hour").innerHTML=(h);
+                    document.getElementById("minute").innerHTML=(min);
+                    document.getElementById("second").innerHTML=(second);
+                    }
+                    setInterval(function() {mytime()},1000);
+                </script>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
 <!-- Mobile Menu -->
 <div class="overlay overlay-hugeinc">
@@ -165,9 +184,9 @@
         <ul>
             <li><a href="{% url 'hydrogen:hydrogen' %}">home</a></li>
             <li><a href="{% url 'blog:index' %}">blog</a></li>
-            <li><a href="{% url 'todolist:todolist' %}">TodoList</a></li>
             <li><a href="{% url 'hydrogen:about' %}">about</a></li>
             <li><a href="{% url 'hydrogen:contact' %}">contact</a></li>
+            <li><a href="{% url 'todolist:todolist' %}">TodoList</a></li>
             
         </ul>
     </nav>
