@@ -112,7 +112,7 @@ body {
   cursor: pointer;
   border-radius: 15px;
   transition: all .2s ease-in-out;
-  margin-right: 3px;
+  margin-right: 30px;
 }
 .player__prev:hover {
   background: #D7DCE2;
@@ -129,7 +129,7 @@ body {
   align-items: center;
   border-radius: 15px;
   transition: all .2s ease-in-out;
-  margin-right: 3px;
+  margin-right: 30px;
   position: relative;
 }
 .player__play:hover {
