@@ -145,6 +145,6 @@ EMAIL_PORT = 25
 #发送邮件的邮箱
 EMAIL_HOST_USER = '1360004212@qq.com'
 #在邮箱中设置的客户端授权密码
-EMAIL_HOST_PASSWORD = 'kkjcbzcyvsjkfeee'
+EMAIL_HOST_PASSWORD = 'dhtbsnoyaqkngbad'
 #收件人看到的发件人 <此处要和发送邮件的邮箱相同>
 EMAIL_FROM = 'fuweifu<1360004212@qq.com>'

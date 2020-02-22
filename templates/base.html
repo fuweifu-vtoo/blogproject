@@ -234,12 +234,18 @@
             <div class="col-md-12 text-center">
                 <p class="fh5co-social-icons">
                     <a href="https://github.com/fuweifu-vtoo" target="_blank" ><img src="{% static 'hydrogen/images/footer_ico-github.png' %}" widht="20px"  height="20px"></a>
+
                     <a href="https://www.zhihu.com/people/hao-ku-de-wo/activities" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-zhihu.png' %}" widht="20px"  height="20px"></a>
+
+                    <!--
                     <a href="https://music.163.com/#/user/home?id=131743529" target="_blank"><img src="{% static 'hydrogen/images/footer_ico-netease.png' %}" widht="20px"  height="20px"></a>
+
                     <a href="https://weibo.com/u/5758695222?topnav=1&wvr=6&topsug=1&is_all=1" target="_blank"><img src="{% static 'hydrogen/images/weibo.png' %}" widht="20px"  height="20px"></a>
+                    -->
+
                     <a href="{% static 'hydrogen/images/my_wechat_QR_code.jpeg' %}" title=" < FWF19961004 > is my wechat ID " class="image-popup fh5co-board-img" ><img src="{% static 'hydrogen/images/footer_ico-wechat.png' %}" widht="20px"  height="20px" filter=alpha(opacity:30) opacity=0.1></a>
                 </p>
-                <p><small>Copyright &copy; 2019 fuweifu-vtoo All Rights Reserved. <br>蜀ICP备xxxxxx号<br>
+                <p><small>Copyright &copy; 2020 fuweifu-vtoo All Rights Reserved. <br>蜀ICP备xxxxxx号<br>
                     <a href="{% url 'hydrogen:hydrogen' %}">本站</a>作品版权为<a href="{% url 'hydrogen:about' %}">本人</a>所有，转载需取得<a href="{% url 'hydrogen:about' %}" target="_blank">本人</a>同意并在明显位置处注明出处<br>
                     <span>网站已运行了</span>
                     <span id='birth'></span>
@@ -251,9 +257,9 @@
                     <span id='second'></span>
                     <span>秒</span>
                     <span>  </span>
-                    <span>托管于腾讯云</span>
+                    <span>托管于阿里云</span>
                     <span>  </span>
-                    <span>使用 聚合图床 镜像存储</span>
+                    <span>使用 七牛云 镜像存储</span>
                     </small></p>
                 <script>
                     function mytime(){
@@ -280,6 +286,7 @@
 </footer>
 
 <!-- Mobile Menu -->
+<!--
 <div class="overlay overlay-hugeinc" style="filter:alpha(opacity:30); opacity:0.7;z-index: 2;position: fixed;" >
     <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
     <nav>
@@ -292,21 +299,20 @@
         </ul>
     </nav>
 </div>
+-->
 
 
 <!-- blog js -->
-    <script src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="{% static 'blog/js/pace.min.js' %}"></script>
-    <script src="{% static 'blog/js/modernizr.custom.js' %}"></script>
+<script src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="{% static 'blog/js/pace.min.js' %}"></script>
+<script src="{% static 'blog/js/modernizr.custom.js' %}"></script>
 <script src="{% static 'blog/js/script.js' %}"></script>
 
 <!--下面是music的三个js文件-->
 <script type="text/javascript" src="{% static 'blog/js/TweenMax.min.js' %}"></script>
 <!--<script src="{% static 'blog/js/jquery.min.js' %}"></script>-->
 <script src="{% static 'blog/js/music.js' %}"></script>
-
-
 
 <!--下面是花瓣飞舞的部分js代码-->
 <script src="{% static 'blog/js/bundle.js' %}"></script>
