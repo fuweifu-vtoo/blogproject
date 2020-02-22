@@ -28,10 +28,10 @@ body {
           transform: translateY(-90%);
 }
 .player.play .player__album:after {
-  box-shadow: 0px 30px 28px -10px rgba(0, 0, 0, 0.2);
+  box-shadow: none;
 }
 .player.play .player__album {
-  top: -65px;
+  top: 0px;
 }
 .player.play .pause {
   display: inline-block;
@@ -40,18 +40,18 @@ body {
   display: none;
 }
 .player__album {
-  width: 102px;
-  height: 102px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   margin-right: 0px;
   position: inherit;
-  top: -50px;
+  top: 0px;
   transition: all .4s ease-in-out;
 }
 .player__album:before {
   content: '';
-  width: 25px;
-  height: 25px;
+  width: 15px;
+  height: 15px;
   position: absolute;
   z-index: 3;
   top: 50%;
