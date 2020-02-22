@@ -40,8 +40,8 @@ body {
   display: none;
 }
 .player__album {
-  width: 52px;
-  height: 52px;
+  width: 102px;
+  height: 102px;
   border-radius: 50%;
   margin-right: 0px;
   position: inherit;
@@ -50,8 +50,8 @@ body {
 }
 .player__album:before {
   content: '';
-  width: 15px;
-  height: 15px;
+  width: 35px;
+  height: 35px;
   position: absolute;
   z-index: 3;
   top: 50%;
