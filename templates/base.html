@@ -51,7 +51,6 @@
     <!--blog页面的颜色和背景设置-->
     <style>
         #main {
-            background-image: url(!!!!!!!!!!!!!!!!!!!!!!!!!!);
             background-position: 0px 0px;
             background-size: cover;
             -moz-background-size: cover;
@@ -134,7 +133,7 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <div class="widget widget-archives" style="filter:alpha(opacity:30); opacity:0.7;z-index:2;position: inherit;">
+                <div class="widget widget-archives-vtoo" style="filter:alpha(opacity:30); opacity:0.7;z-index:2;position: inherit;">
                     <h3 class="widget-title">归档</h3>
                     {% archives as date_list %}
                     <ul>
@@ -145,6 +144,23 @@
                         {% empty %}
                         暂无归档！
                         {% endfor %}
+                    </ul>
+                </div>
+                <div class="widget widget-recommend-posts" style="filter:alpha(opacity:30); opacity:0.7;z-index:2;position: inherit;">
+                    <h3 class="widget-title">推荐阅读</h3>
+                    <ul>
+                        <li>
+                            <a href="http://www.vtoo.pro/post/38/">为什么要做batch normalization</a>
+                        </li>
+                        <li>
+                            <a href="http://www.vtoo.pro/post/27/">KL散度和交叉熵的关系</a>
+                        </li>
+                        <li>
+                            <a href="http://www.vtoo.pro/post/18/">关于梯度消失和梯度爆炸_深度神经网络为何很难训练</a>
+                        </li>
+                        <li>
+                            <a href="http://www.vtoo.pro/post/35/">Resnet网络好在哪里</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="widget widget-tag-cloud" style="filter:alpha(opacity:30); opacity:0.7;z-index:2;position: inherit;">
@@ -249,7 +265,7 @@
 
                     <a href="{% static 'hydrogen/images/my_wechat_QR_code.jpeg' %}" title=" < FWF19961004 > is my wechat ID " class="image-popup fh5co-board-img" ><img src="{% static 'hydrogen/images/footer_ico-wechat.png' %}" widht="20px"  height="20px" filter=alpha(opacity:30) opacity=0.1></a>
                 </p>
-                <p><small>Copyright &copy; 2020 fuweifu-vtoo All Rights Reserved. <br>蜀ICP备xxxxxx号<br>
+                <p><small>Copyright &copy; 2020 fuweifu-vtoo All Rights Reserved. <br>蜀ICP备20004445号<br>
                     <a href="{% url 'hydrogen:hydrogen' %}">本站</a>作品版权为<a href="{% url 'hydrogen:about' %}">本人</a>所有，转载需取得<a href="{% url 'hydrogen:about' %}" target="_blank">本人</a>同意并在明显位置处注明出处<br>
                     <span>网站已运行了</span>
                     <span id='birth'></span>
@@ -263,7 +279,7 @@
                     <span>  </span>
                     <span>托管于阿里云</span>
                     <span>  </span>
-                    <span>使用 七牛云 镜像存储</span>
+                    <span>使用七牛云CDN存储</span>
                     </small></p>
                 <script>
                     function mytime(){

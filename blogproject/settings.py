@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'jdxsw54mrn0_z1jl9xg=kbkph3u_9%)x_eh-jt^zgg)rba28u('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True  # 这个影响静态文件的加载，很迷惑
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', '.vtoo.pro', '39.105.59.116']
 

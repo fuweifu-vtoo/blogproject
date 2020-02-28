@@ -368,9 +368,32 @@ img {
     font-family: "Ionicons";
     position: absolute;
     left: -17px;
-    top: 3px;
+    top: 0px;
     font-size: 16px;
     color: #000;
+}
+
+.widget-recommend-posts ul {
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.widget-recommend-posts ul li {
+    list-style-type: none;
+    position: relative;
+    line-height: 170%;
+    margin-bottom: 10px;
+}
+
+.widget-recommend-posts ul li::before {
+    content: '\f38a';
+    font-family: "Ionicons";
+    position: absolute;
+    left: -21px;
+    top: 0px;
+    font-size: 16px;
+    color: #333;
 }
 
 .widget-archives ul {
@@ -391,9 +414,44 @@ img {
     font-family: "Ionicons";
     position: absolute;
     left: -25px;
-    top: 1px;
+    top: 0px;
     font-size: 16px;
     color: #000;
+}
+
+.widget-archives-vtoo ul {
+    padding: 0;
+    margin: 0;
+    padding-left: -10px;
+}
+
+.widget-archives-vtoo ul li {
+    line-height: 110%;
+    list-style-type: none;
+    font-size: 13px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 3px 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 5px 5px;
+}
+
+
+.widget-tag-cloud ul {
+    padding: 0;
+    margin: 0;
+    margin-right: -10px;
+}
+
+.widget-tag-cloud ul li {
+    list-style-type: none;
+    font-size: 13px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 3px 8px;
+    border: 1px solid #ddd;
 }
 
 .widget-category ul {
@@ -417,22 +475,6 @@ img {
     top: 1px;
     font-size: 18px;
     color: #000;
-}
-
-.widget-tag-cloud ul {
-    padding: 0;
-    margin: 0;
-    margin-right: -10px;
-}
-
-.widget-tag-cloud ul li {
-    list-style-type: none;
-    font-size: 13px;
-    display: inline-block;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    padding: 3px 8px;
-    border: 1px solid #ddd;
 }
 
 .widget-content ul ul {
