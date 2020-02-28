@@ -133,18 +133,18 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <div class="widget widget-archives-vtoo" style="filter:alpha(opacity:30); opacity:0.7;z-index:2;position: inherit;">
-                    <h3 class="widget-title">归档</h3>
-                    {% archives as date_list %}
-                    <ul>
-                        {% for date in date_list %}
-                        <li>
-                            <a href="{% url 'blog:archives' date.year date.month %}">{{ date.year }} 年 {{ date.month }} 月</a>
-                        </li>
-                        {% empty %}
-                        暂无归档！
-                        {% endfor %}
-                    </ul>
+                <div class="widget widget-tag-cloud" style="filter:alpha(opacity:30); opacity:0.7;z-index:2;position: inherit;">
+                  <h3 class="widget-title">标签云</h3>
+                  {% get_tags as tag_list %}
+                  <ul>
+                    {% for tag in tag_list %}
+                    <li>
+                      <a href="{% url 'blog:tag' tag.pk %}">{{ tag.name }}</a>
+                    </li>
+                    {% empty %}
+                    暂无标签！
+                    {% endfor %}
+                  </ul>
                 </div>
                 <div class="widget widget-recommend-posts" style="filter:alpha(opacity:30); opacity:0.7;z-index:2;position: inherit;">
                     <h3 class="widget-title">推荐阅读</h3>
@@ -163,18 +163,18 @@
                         </li>
                     </ul>
                 </div>
-                <div class="widget widget-tag-cloud" style="filter:alpha(opacity:30); opacity:0.7;z-index:2;position: inherit;">
-                  <h3 class="widget-title">标签云</h3>
-                  {% get_tags as tag_list %}
-                  <ul>
-                    {% for tag in tag_list %}
-                    <li>
-                      <a href="{% url 'blog:tag' tag.pk %}">{{ tag.name }}</a>
-                    </li>
-                    {% empty %}
-                    暂无标签！
-                    {% endfor %}
-                  </ul>
+                <div class="widget widget-archives-vtoo" style="filter:alpha(opacity:30); opacity:0.7;z-index:2;position: inherit;">
+                    <h3 class="widget-title">归档</h3>
+                    {% archives as date_list %}
+                    <ul>
+                        {% for date in date_list %}
+                        <li>
+                            <a href="{% url 'blog:archives' date.year date.month %}">{{ date.year }} 年 {{ date.month }} 月</a>
+                        </li>
+                        {% empty %}
+                        暂无归档！
+                        {% endfor %}
+                    </ul>
                 </div>
 
                 <!--
