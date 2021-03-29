@@ -5,7 +5,7 @@ future==0.16.0
 jieba==0.39
 Markdown==2.6.11
 pefile==2017.11.5
-Pygments==2.2.0
+Pygments==2.7.4
 python-ptrace==0.9.3
 pytz==2018.5
 six==1.11.0
